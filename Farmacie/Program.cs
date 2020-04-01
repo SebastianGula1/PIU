@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Librarie;
+using NivelAccesDate;
 
 
 namespace Farmacie
@@ -34,6 +35,7 @@ namespace Farmacie
                 Console.WriteLine("V.Verificare valabilitate medicamente.");
                 Console.WriteLine("L.Verificati locatiile unde se gasesc medicamentele.");
                 Console.WriteLine("C.Comparare pret ");
+                Console.WriteLine("X.Citire din fisier.");
                 Console.WriteLine("E.Exit.");
                 Console.WriteLine("Alegeti o optiune: ");
 

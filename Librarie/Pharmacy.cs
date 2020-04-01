@@ -8,6 +8,9 @@ namespace Librarie
 {
       public class Pharmacy
     {
+        private const string SEPARATOR_AFISARE = " ";
+        private const char SEPARATOR_PRINCIPAL_FISIER = ' ';
+
         //constante
         public const int higher = 1;
         public const int equal = 0;
@@ -69,7 +72,17 @@ namespace Librarie
         {
             return this.pret.CompareTo(_p.pret);
         }
+        public string ConversieLaSir_Fisier()
+        {
+            string s = string.Empty;
+            if (nume != null)
+            {
+                s = string.Join(SEPARATOR_AFISARE, pret);
+            }
+            string s1 = string.Format("{1}{0}{2}{0}{3}{0}{4}", SEPARATOR_PRINCIPAL_FISIER, (nume ?? " NECUNOSCUT "), pret, valabilitate, (locatie ?? " NECUNOSCUT "), s);
 
+            return s1;
+        }
     }
 
 }
