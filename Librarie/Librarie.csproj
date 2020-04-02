@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enumerare.cs" />
     <Compile Include="Pharmacy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
