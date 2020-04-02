@@ -1,6 +1,5 @@
 ﻿using Librarie;
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace NivelAccesDate
@@ -38,25 +37,25 @@ namespace NivelAccesDate
             }
         }
 
-        public Pharmacy[] GetM(out int nrMed)
+        public Pharmacy[] GetM(out int nr)
         {
             Pharmacy[] medicamente = new Pharmacy[PAS_ALOCARE];
 
             try
             {
-                // instructiunea 'using' va apela sr.Close()
+                
                 using (StreamReader sr = new StreamReader(NumeFisier))
                 {
                     string line;
-                    nrMed = 0;
+                    nr = 0;
 
-                    //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
+                    
                     while ((line = sr.ReadLine()) != null)
                     {
-                        medicamente[nrMed++] = new Pharmacy(line);
-                        if (nrMed == PAS_ALOCARE)
+                        medicamente[nr++] = new Pharmacy(line);
+                        if (nr == PAS_ALOCARE)
                         {
-                            Array.Resize(ref medicamente, nrMed + PAS_ALOCARE);
+                            Array.Resize(ref medicamente, nr + PAS_ALOCARE);
                         }
                     }
                 }
