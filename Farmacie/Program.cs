@@ -80,16 +80,12 @@ namespace Farmacie
                         }
                     case "C":
                         {
-                            Console.WriteLine("Intrucat medicamentul Decasept se gaseste in doua farmacii, se va compara pretul spre a se vedea care locatie este mai rentabila.");
-
-                            //if (med2.compararePret(med5) == Pharmacy.higher)
-                            //    Console.WriteLine(" Pretul este mai avantajos in farmacia {0} ", med5.locatie);
-                            //else if (med2.compararePret(med5) == Pharmacy.less)
-                            //    Console.WriteLine("Pretul este mai avantajos in farmacia {0}", med2.locatie);
-                            //else
-                            //    Console.WriteLine("Pretul este egal.");
-
-
+                                if (vect[0].compararePret(vect[1]) == Pharmacy.higher)
+                                    Console.WriteLine("Pretul este mai avantajos in farmacia {0}", vect[1].locatie);
+                                else if (vect[0].compararePret(vect[1]) == Pharmacy.less)
+                                    Console.WriteLine("Prestul este mai avantajos in farmacia {0}", vect[0].locatie);
+                                else
+                                    Console.WriteLine("Pretul este egal.");
                             Console.ReadKey();
                             break;
                         }
