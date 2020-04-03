@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Librarie
 {
-    public enum valability
+    public enum tip
     {
-       valabil=1,
-       nevalabil=2,
-       unknowm=3,
+        analgezic = 1,
+        pilula = 2,
+        sirop = 3,
+        unguent = 4,
+        injectie = 5,
+        necunoscnut =6,
     }
-
-
 }

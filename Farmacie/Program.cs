@@ -18,7 +18,8 @@ namespace Farmacie
             IStocareData admin = StocareFactory.GetAdministratorStocare();
             Pharmacy[] vect;
             vect = admin.GetM(out nr);
-            string s;
+            
+            
 
             while (continuare)
             {
@@ -29,6 +30,7 @@ namespace Farmacie
                 Console.WriteLine("V.Verificare valabilitate medicamente.");
                 Console.WriteLine("L.Verificati locatiile unde se gasesc medicamentele.");
                 Console.WriteLine("C.Comparare pret ");
+                Console.WriteLine("T.Tipul medicamentului.");
                 Console.WriteLine("E.Exit.");
                 Console.WriteLine("Alegeti o optiune: ");
 
@@ -45,15 +47,15 @@ namespace Farmacie
                             vect[nr] = med;
                             nr++;
                             admin.AddM(med);
-                          
+
                             Console.ReadKey();
                             break;
                         }
                     case "I":
                         {
-                            for(int i=0;i<nr;i++)
+                            for (int i = 0; i < nr; i++)
                             {
-                                Console.WriteLine(vect[i].Info()); 
+                                Console.WriteLine(vect[i].Info());
                             }
                             Console.WriteLine("Nu s-a adaugat niciun alt medicament.\n");
                             Console.ReadKey();
@@ -61,17 +63,17 @@ namespace Farmacie
                         }
                     case "V":
                         {
-                            for(int i=0;i<nr;i++)
+                            for (int i = 0; i < nr; i++)
                             {
                                 Console.WriteLine(vect[i].Valabil());
                             }
-                            
+
                             Console.ReadKey();
                             break;
                         }
                     case "L":
                         {
-                            for(int i=0;i<nr;i++)
+                            for (int i = 0; i < nr; i++)
                             {
                                 Console.WriteLine(vect[i].map());
                             }
@@ -79,13 +81,22 @@ namespace Farmacie
                             break;
                         }
                     case "C":
+                        {  
+                            if (vect[0].compararePret(vect[1]) == Pharmacy.higher)
+                                Console.WriteLine("Pretul este mai avantajos in farmacia {0}", vect[1].locatie);
+                            else if (vect[0].compararePret(vect[1]) == Pharmacy.less)
+                                Console.WriteLine("Prestul este mai avantajos in farmacia {0}", vect[0].locatie);
+                            else
+                                Console.WriteLine("Pretul este egal in ambele farmacii.");
+                            Console.ReadKey();
+                            break;
+                        }
+                    case "T":
                         {
-                                if (vect[0].compararePret(vect[1]) == Pharmacy.higher)
-                                    Console.WriteLine("Pretul este mai avantajos in farmacia {0}", vect[1].locatie);
-                                else if (vect[0].compararePret(vect[1]) == Pharmacy.less)
-                                    Console.WriteLine("Prestul este mai avantajos in farmacia {0}", vect[0].locatie);
-                                else
-                                    Console.WriteLine("Pretul este egal.");
+                            for(int i=0;i<nr;i++)
+                            {
+                                Console.WriteLine(vect[i].TipMedicament());
+                            }
                             Console.ReadKey();
                             break;
                         }
@@ -109,19 +120,26 @@ namespace Farmacie
             Console.WriteLine("Introduceti pretul:");
             int pret = Int32.Parse(Console.ReadLine());
 
-            Console.WriteLine("Introduceti daca este valabil momentan[1-valabil 0-nevalabil]:");
-            int valabilitate = Int32.Parse(Console.ReadLine());
-
             Console.WriteLine("Introduceti locatia unde se poate gasi:");
             string locatie = Console.ReadLine();
 
 
-            Console.WriteLine("Va rugam sa verificicati din nou informatiile despre medicamente.");
+            Pharmacy m = new Pharmacy(nume, pret, locatie);
+            Console.WriteLine("Introduceti daca medicamentul este valabil. [1-valabil] [2-nevalabil] [3-necunoscut]");
+            m.vala = (valability)Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti tipul medicamentului :");
+            Console.WriteLine("1.Analgezic");
+            Console.WriteLine("2.Pilula");
+            Console.WriteLine("3.Sirop");
+            Console.WriteLine("4.Unguesnt");
+            Console.WriteLine("5.Injectie");
+            Console.WriteLine("6.Nu se stie tipul");
+            m.tipp = (tip)Int32.Parse(Console.ReadLine());
 
-            Pharmacy m = new Pharmacy(nume, pret, valabilitate, locatie);
 
             return m;
         }
-        
+
     }
 }
+
