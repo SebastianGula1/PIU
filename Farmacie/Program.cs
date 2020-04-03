@@ -81,13 +81,24 @@ namespace Farmacie
                             break;
                         }
                     case "C":
-                        {  
-                            if (vect[0].compararePret(vect[1]) == Pharmacy.higher)
+                        {
+                            if (vect[0].CompararePret(vect[1]) == Pharmacy.higher)
+                            {
                                 Console.WriteLine("Pretul este mai avantajos in farmacia {0}", vect[1].locatie);
-                            else if (vect[0].compararePret(vect[1]) == Pharmacy.less)
-                                Console.WriteLine("Prestul este mai avantajos in farmacia {0}", vect[0].locatie);
+                            }
                             else
-                                Console.WriteLine("Pretul este egal in ambele farmacii.");
+
+                            {
+                                if (vect[0].CompararePret(vect[1]) == Pharmacy.less)
+                                {
+                                    Console.WriteLine("Prestul este mai avantajos in farmacia {0}", vect[0].locatie);
+                                }
+                                else
+                                {
+
+                                    Console.WriteLine("Pretul este egal in ambele farmacii.");
+                                }
+                            }                         
                             Console.ReadKey();
                             break;
                         }
