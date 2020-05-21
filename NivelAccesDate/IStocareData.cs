@@ -10,6 +10,10 @@ namespace NivelAccesDate
     public interface IStocareData
     {
         void AddM(Pharmacy x);
-        Pharmacy[] GetM(out int nrMed);
+        List<Pharmacy> GetMedicamente();
+        Pharmacy GetMedicament(string nume);
+       Pharmacy[] GetM(out int nrMed);
+       bool UpdateMedicament(Pharmacy x);
+
     }
 }

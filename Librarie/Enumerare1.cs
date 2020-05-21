@@ -8,11 +8,20 @@ namespace Librarie
 {
     public enum tip
     {
-        analgezic = 1,
-        pilula = 2,
-        sirop = 3,
-        unguent = 4,
-        injectie = 5,
-        necunoscnut =6,
+        Pilula = 0,
+        Sirop = 1,
+        Unguent = 2,
+        Injectie = 3,
+        Necunoscut =4,
+    }
+    public enum CampuriMedicamente
+    {
+        Id = 0,
+        Nume = 1,
+        Pret = 2,
+        Tip = 3,
+        Locatie = 5,
+        Valabilitate = 4,
+        
     }
 }

@@ -11,8 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NivelAccesDate", "..\NivelA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5CF9A44D-3DB5-470F-8F4B-9C1298CDCEC3}"
 	ProjectSection(SolutionItems) = preProject
-		bin\Debug\Medicamente.txt = bin\Debug\Medicamente.txt
+		..\FarmacieForm\bin\Debug\Medicamente.txt = ..\FarmacieForm\bin\Debug\Medicamente.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmacieForm", "..\FarmacieForm\FarmacieForm.csproj", "{1BEB6D43-F7AE-412F-9E86-84F218E0BD5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{2ABD3CD6-0CEE-409D-B6FA-19D95D6A04F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ABD3CD6-0CEE-409D-B6FA-19D95D6A04F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ABD3CD6-0CEE-409D-B6FA-19D95D6A04F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BEB6D43-F7AE-412F-9E86-84F218E0BD5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BEB6D43-F7AE-412F-9E86-84F218E0BD5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BEB6D43-F7AE-412F-9E86-84F218E0BD5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BEB6D43-F7AE-412F-9E86-84F218E0BD5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

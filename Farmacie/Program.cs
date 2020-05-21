@@ -29,7 +29,7 @@ namespace Farmacie
                 Console.WriteLine("I.Info Medicamente(Afisare)");
                 Console.WriteLine("V.Verificare valabilitate medicamente.");
                 Console.WriteLine("L.Verificati locatiile unde se gasesc medicamentele.");
-                Console.WriteLine("C.Comparare pret ");
+                Console.WriteLine("C.Comparare Pret ");
                 Console.WriteLine("T.Tipul medicamentului.");
                 Console.WriteLine("E.Exit.");
                 Console.WriteLine("Alegeti o optiune: ");
@@ -84,14 +84,14 @@ namespace Farmacie
                         {
                             if (vect[0].CompararePret(vect[1]) == Pharmacy.higher)
                             {
-                                Console.WriteLine("Pretul este mai avantajos in farmacia {0}", vect[1].locatie);
+                                Console.WriteLine("Pretul este mai avantajos in farmacia {0}", vect[1].Locatie);
                             }
                             else
 
                             {
                                 if (vect[0].CompararePret(vect[1]) == Pharmacy.less)
                                 {
-                                    Console.WriteLine("Prestul este mai avantajos in farmacia {0}", vect[0].locatie);
+                                    Console.WriteLine("Prestul este mai avantajos in farmacia {0}", vect[0].Locatie);
                                 }
                                 else
                                 {
@@ -136,8 +136,8 @@ namespace Farmacie
 
 
             Pharmacy m = new Pharmacy(nume, pret, locatie);
-            Console.WriteLine("Introduceti daca medicamentul este valabil. [1-valabil] [2-nevalabil] [3-necunoscut]");
-            m.vala = (valability)Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti daca medicamentul este Valabilitate. [1-Valabilitate] [2-nevalabil] [3-necunoscut]");
+            m.Valabilitate = (valability)Int32.Parse(Console.ReadLine());
             Console.WriteLine("Introduceti tipul medicamentului :");
             Console.WriteLine("1.Analgezic");
             Console.WriteLine("2.Pilula");
@@ -145,7 +145,7 @@ namespace Farmacie
             Console.WriteLine("4.Unguesnt");
             Console.WriteLine("5.Injectie");
             Console.WriteLine("6.Nu se stie tipul");
-            m.tipp = (tip)Int32.Parse(Console.ReadLine());
+            m.Tip = (tip)Int32.Parse(Console.ReadLine());
 
 
             return m;
