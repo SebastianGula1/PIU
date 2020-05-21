@@ -116,7 +116,7 @@ namespace Librarie
             {
                 sLocatie = string.Join(SEPARATOR_AFISARE, Locatie);
             }
-            string s1 = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}", SEPARATOR_PRINCIPAL_FISIER,IdMedicament, (Nume ?? " NECUNOSCUT "), Pret,Tip,Valabilitate,sLocatie);
+            string s1 = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}", SEPARATOR_PRINCIPAL_FISIER,IdMedicament, (Nume ?? " NECUNOSCUT "), Pret,Tip,Valabilitate, MedicamenteAsString);
 
             return s1;
         }

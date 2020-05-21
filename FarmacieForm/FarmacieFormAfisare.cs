@@ -16,15 +16,19 @@ namespace FarmacieForm
 {
     public partial class FarmacieFormAfisare : Form
     {
+        IStocareData adminFarmacie;
+        List<string> locatiiSelectate = new List<string>();
 
         public FarmacieFormAfisare()
 
         {
             InitializeComponent();
+            adminFarmacie = StocareFactory.GetAdministratorStocare();
+
 
         }
-           /*
-            private void btnAfiseaza_click(Object sender, EventArgs e)
+
+        private void btnAfiseaza_click(Object sender, EventArgs e)
             {
                 List<Pharmacy> medicamente = adminFarmacie.GetMedicamente();
 
@@ -55,6 +59,6 @@ namespace FarmacieForm
         {
             this.Close();
         }
-      */  
+       
     } 
 }
