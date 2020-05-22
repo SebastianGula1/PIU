@@ -31,8 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FarmacieForm));
             this.btnAdauga = new System.Windows.Forms.Button();
             this.btnAfisare = new System.Windows.Forms.Button();
-            this.btnCauta = new System.Windows.Forms.Button();
-            this.btnModifica = new System.Windows.Forms.Button();
+            this.btnCautaPagina = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.lblMesaj = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,6 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblLogoText = new System.Windows.Forms.Label();
             this.lblMesajF = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -78,37 +78,22 @@
             this.btnAfisare.UseVisualStyleBackColor = false;
             this.btnAfisare.Click += new System.EventHandler(this.btnAfisarePagina_Click);
             // 
-            // btnCauta
+            // btnCautaPagina
             // 
-            this.btnCauta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.btnCauta.FlatAppearance.BorderSize = 0;
-            this.btnCauta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCauta.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCauta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
-            this.btnCauta.Image = ((System.Drawing.Image)(resources.GetObject("btnCauta.Image")));
-            this.btnCauta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCauta.Location = new System.Drawing.Point(0, 266);
-            this.btnCauta.Name = "btnCauta";
-            this.btnCauta.Size = new System.Drawing.Size(199, 77);
-            this.btnCauta.TabIndex = 8;
-            this.btnCauta.Text = "Cauta";
-            this.btnCauta.UseVisualStyleBackColor = false;
-            // 
-            // btnModifica
-            // 
-            this.btnModifica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.btnModifica.FlatAppearance.BorderSize = 0;
-            this.btnModifica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifica.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifica.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
-            this.btnModifica.Image = ((System.Drawing.Image)(resources.GetObject("btnModifica.Image")));
-            this.btnModifica.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnModifica.Location = new System.Drawing.Point(3, 341);
-            this.btnModifica.Name = "btnModifica";
-            this.btnModifica.Size = new System.Drawing.Size(194, 91);
-            this.btnModifica.TabIndex = 9;
-            this.btnModifica.Text = "Modifica";
-            this.btnModifica.UseVisualStyleBackColor = false;
+            this.btnCautaPagina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.btnCautaPagina.FlatAppearance.BorderSize = 0;
+            this.btnCautaPagina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCautaPagina.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCautaPagina.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.btnCautaPagina.Image = ((System.Drawing.Image)(resources.GetObject("btnCautaPagina.Image")));
+            this.btnCautaPagina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCautaPagina.Location = new System.Drawing.Point(0, 266);
+            this.btnCautaPagina.Name = "btnCautaPagina";
+            this.btnCautaPagina.Size = new System.Drawing.Size(199, 77);
+            this.btnCautaPagina.TabIndex = 8;
+            this.btnCautaPagina.Text = "Cauta";
+            this.btnCautaPagina.UseVisualStyleBackColor = false;
+            this.btnCautaPagina.Click += new System.EventHandler(this.btnCautaPagina_Click);
             // 
             // lblMesaj
             // 
@@ -124,21 +109,23 @@
             this.panel1.Controls.Add(this.lblCopyright);
             this.panel1.Controls.Add(this.btnAdauga);
             this.panel1.Controls.Add(this.btnAfisare);
-            this.panel1.Controls.Add(this.btnCauta);
-            this.panel1.Controls.Add(this.btnModifica);
-            this.panel1.Location = new System.Drawing.Point(1, 2);
+            this.panel1.Controls.Add(this.btnCautaPagina);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 598);
+            this.panel1.Size = new System.Drawing.Size(200, 536);
             this.panel1.TabIndex = 21;
             // 
             // lblCopyright
             // 
             this.lblCopyright.AutoSize = true;
+            this.lblCopyright.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblCopyright.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCopyright.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
-            this.lblCopyright.Location = new System.Drawing.Point(44, 573);
+            this.lblCopyright.Location = new System.Drawing.Point(0, 516);
             this.lblCopyright.Name = "lblCopyright";
-            this.lblCopyright.Size = new System.Drawing.Size(90, 17);
+            this.lblCopyright.Padding = new System.Windows.Forms.Padding(35, 3, 0, 0);
+            this.lblCopyright.Size = new System.Drawing.Size(125, 20);
             this.lblCopyright.TabIndex = 23;
             this.lblCopyright.Text = " ©  GGS 2020";
             // 
@@ -146,9 +133,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.panel2.Controls.Add(this.lblLogoText);
-            this.panel2.Location = new System.Drawing.Point(0, 5);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(201, 100);
+            this.panel2.Size = new System.Drawing.Size(201, 105);
             this.panel2.TabIndex = 22;
             // 
             // lblLogoText
@@ -172,18 +159,30 @@
             this.lblMesajF.Size = new System.Drawing.Size(0, 21);
             this.lblMesajF.TabIndex = 39;
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.Location = new System.Drawing.Point(202, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(667, 536);
+            this.panel3.TabIndex = 40;
+            // 
             // FarmacieForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1120, 599);
+            this.ClientSize = new System.Drawing.Size(870, 536);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.lblMesajF);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblMesaj);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FarmacieForm";
             this.Text = "PharmacyApp";
             this.panel1.ResumeLayout(false);
@@ -198,8 +197,7 @@
         #endregion
         private System.Windows.Forms.Button btnAdauga;
         private System.Windows.Forms.Button btnAfisare;
-        private System.Windows.Forms.Button btnCauta;
-        private System.Windows.Forms.Button btnModifica;
+        private System.Windows.Forms.Button btnCautaPagina;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label lblMesaj;
         private System.Windows.Forms.Panel panel1;
@@ -207,6 +205,7 @@
         private System.Windows.Forms.Label lblLogoText;
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.Label lblMesajF;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

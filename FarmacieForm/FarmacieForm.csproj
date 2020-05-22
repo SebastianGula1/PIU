@@ -83,6 +83,18 @@
     <Compile Include="FarmacieFormAfisare.Designer.cs">
       <DependentUpon>FarmacieFormAfisare.cs</DependentUpon>
     </Compile>
+    <Compile Include="FarmacieFormCauta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FarmacieFormCauta.Designer.cs">
+      <DependentUpon>FarmacieFormCauta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFarmacieModifica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFarmacieModifica.Designer.cs">
+      <DependentUpon>FormFarmacieModifica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StocareFactory.cs" />
@@ -94,6 +106,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FarmacieFormAfisare.resx">
       <DependentUpon>FarmacieFormAfisare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FarmacieFormCauta.resx">
+      <DependentUpon>FarmacieFormCauta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFarmacieModifica.resx">
+      <DependentUpon>FormFarmacieModifica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

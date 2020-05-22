@@ -5,12 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Librarie
+   
 {
-    public enum valability
+    [Flags]
+    public enum CodEroare
     {
-       valabil=1,
-       nevalabil=2,
-       unknowm=3,
+       CORECT = 0,
+       NUME_INCORECT = 1,
+       PRET_INCORET = 2,
+       TIP_INCORECT = 3,
+       LOCATIE_INCORECT = 4,
+       VALABILITATE = 5,
+
     }
 
 

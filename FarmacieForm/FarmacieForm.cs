@@ -23,7 +23,6 @@ namespace FarmacieForm
         {
             InitializeComponent();
             adminFarmacie = StocareFactory.GetAdministratorStocare();
-          //  this.BackColor = Color.FromArgb(35, 39, 42);
         }
               
         private void btnAfisarePagina_Click(Object sender, EventArgs e)
@@ -35,6 +34,11 @@ namespace FarmacieForm
         private void btnAdaugaPagina_Click(Object sender, EventArgs e)
         {
             var myForm = new FarmacieFormAdauga();
+            myForm.Show();
+        }
+        private void btnCautaPagina_Click(Object sender, EventArgs e)
+        {
+            var myForm = new FarmacieFormCauta();
             myForm.Show();
         }
 

@@ -26,15 +26,25 @@ namespace FarmacieForm
         }
         private void btnAdauga_Click(Object sender, EventArgs e)
         {
+            CodEroare codValidare = Validare(txtNume.Text, txtPret.Text);
 
-            Pharmacy p = new Pharmacy(txtNume.Text, Convert.ToInt32(txtPret.Text), GetTipMedicamentSelectat().ToString(), cmbValabil.Text);
-            p.Locatie = new List<string>();
-            p.Locatie.AddRange(locatiiSelectate);
-            adminFarmacie.AddM(p);
-            lblMesajAdauga.Text = "S-a adaugat Medicamentul";
+            if (codValidare != CodEroare.CORECT)
+            {
+                MarcheazaControaleCuDateIncorecte(codValidare);
+                lblMesajAdauga.Text = "Eroare la adaugarea medicamentului";
+            }
 
-            ResetareControale();
+            else
+            {
 
+                Pharmacy p = new Pharmacy(txtNume.Text, Convert.ToInt32(txtPret.Text), GetTipMedicamentSelectat().ToString(), cmbValabil.Text);
+                p.Locatie = new List<string>();
+                p.Locatie.AddRange(locatiiSelectate);
+                adminFarmacie.AddM(p);
+                lblMesajAdauga.Text = "S-a adaugat Medicamentul";
+
+                ResetareControale();
+            }
         }
         private tip GetTipMedicamentSelectat()
         {
@@ -64,6 +74,26 @@ namespace FarmacieForm
             locatiiSelectate.Clear();
             cmbValabil.Text = string.Empty;
         }
+        private void MarcheazaControaleCuDateIncorecte(CodEroare codValidare)
+        {
+            if ((codValidare & CodEroare.NUME_INCORECT) == CodEroare.NUME_INCORECT)
+            {
+                lblNume.ForeColor = Color.Red;
+            }
+            if ((codValidare & CodEroare.PRET_INCORET) == CodEroare.PRET_INCORET)
+            {
+                lblPret.ForeColor = Color.Red;
+            }
+            if ((codValidare & CodEroare.TIP_INCORECT) == CodEroare.TIP_INCORECT)
+            {
+                lblTip.ForeColor = Color.Red;
+            }
+            if ((codValidare & CodEroare.LOCATIE_INCORECT) == CodEroare.LOCATIE_INCORECT)
+            {
+                lblFarmacie.ForeColor = Color.Red;
+            }
+           
+        }
         private void ckbDiscipline_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox checkBoxControl = sender as CheckBox;
@@ -76,6 +106,37 @@ namespace FarmacieForm
                 locatiiSelectate.Add(farmacieSelectata);
             else
                 locatiiSelectate.Remove(farmacieSelectata);
+        }
+        private CodEroare Validare(string nume, string pret)
+        {
+            CodEroare rezultatValidare = CodEroare.CORECT;
+            if (nume == string.Empty)
+            {
+                rezultatValidare |= CodEroare.NUME_INCORECT;
+            }
+            if (pret == string.Empty )
+            {
+                rezultatValidare |= CodEroare.PRET_INCORET;
+            }
+           
+            // verificare ca este cel putin un program studiu selectat
+            int  optiuneSelectata = 0;
+            foreach (var control in boxTip.Controls)
+            {
+                RadioButton rdb = null;
+                try
+                {
+                    rdb = (RadioButton)control;
+                }
+                catch { }
+
+                if (rdb != null && rdb.Checked == true)
+                    optiuneSelectata = 1;
+            }
+            if (optiuneSelectata == 0)
+                rezultatValidare |= CodEroare.LOCATIE_INCORECT;
+                
+            return rezultatValidare;
         }
 
         private void btnClose_click(object sender, EventArgs e)

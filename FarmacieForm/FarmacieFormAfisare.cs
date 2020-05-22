@@ -52,9 +52,15 @@ namespace FarmacieForm
 
 
                 // dataGridMedicamente.DataSource = medicamente;
-                dataGridMedicamente.DataSource = medicamente.Select(s => new { s.Nume, s.Pret, s.Tip, s.Valabilitate, Locatie = string.Join(",", s.MedicamenteAsString) }).ToList();
+                dataGridMedicamente.DataSource = medicamente.Select(s => new {s.IdMedicament, s.Nume, s.Pret, s.Tip, s.Valabilitate, Locatie = string.Join(",", s.MedicamenteAsString) }).ToList();
 
             }
+            
+            private void btnModificaPagina_click(object sender, EventArgs e)
+        {
+            var myForm = new FormFarmacieModifica();
+            myForm.Show();
+        }
         private void btnClose_click(object sender, EventArgs e)
         {
             this.Close();

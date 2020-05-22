@@ -73,18 +73,18 @@ namespace Librarie
         {
             get
             {
-                string sDiscipline = string.Empty;
+                string sMedicine = string.Empty;
 
-                foreach (string disciplina in Locatie)
+                foreach (string loc in Locatie)
                 {
-                    if (sDiscipline != string.Empty)
+                    if (sMedicine != string.Empty)
                     {
-                        sDiscipline += SEPARATOR_SECUNDAR_FISIER;
+                        sMedicine += SEPARATOR_SECUNDAR_FISIER;
                     }
-                    sDiscipline += disciplina;
+                    sMedicine += loc;
                 }
 
-                return sDiscipline;
+                return sMedicine;
             }
         }
 
@@ -104,7 +104,7 @@ namespace Librarie
             {
                 sLocatie = string.Join(" ", Locatie);
             }
-            string s = string.Format("Medicamentul cu Id: #{0} si numele: \"{1}\", cu pretul de {2} lei, de tipul: {3}  este {4} la farmacia {5} ", IdMedicament, (Nume ?? " NECUNOSCUT "), Pret, Tip,Valabilitate, Locatie);
+            string s = string.Format("Medicamentul cu Id: #{0} si numele: \"{1}\", cu pretul de {2} lei  de tipul: {3} \n este {4} la farmacia/farmaciile {5} ", IdMedicament, (Nume ?? " NECUNOSCUT "), Pret, Tip,Valabilitate, MedicamenteAsString);
             return s;
         }
 

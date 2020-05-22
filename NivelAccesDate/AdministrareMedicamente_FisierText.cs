@@ -162,7 +162,7 @@ namespace NivelAccesDate
             }
             return IdStudent;
         }
-        public List<Pharmacy> GetStudenti()
+        public List<Pharmacy> GetMedics()
         {
             List<Pharmacy> medicamente = new List<Pharmacy>();
 
@@ -192,9 +192,9 @@ namespace NivelAccesDate
 
             return medicamente;
         }
-        public bool UpdateMedicament(Pharmacy studentActualizat)
+        public bool UpdateMedicament(Pharmacy medicamentActualizat)
         {
-            List<Pharmacy> studenti = GetStudenti();
+            List<Pharmacy> medicamente = GetMedics();
             bool actualizareCuSucces = false;
             try
             {
@@ -202,16 +202,16 @@ namespace NivelAccesDate
                 //al doilea parametru setat la 'false' al constructorului StreamWriter indica modul 'overwrite' de deschidere al fisierului
                 using (StreamWriter swFisierText = new StreamWriter(NumeFisier, false))
                 {
-                    foreach (Pharmacy stud in studenti)
+                    foreach (Pharmacy med in medicamente)
                     {
                         //informatiile despre studentul actualizat vor fi preluate din parametrul "studentActualizat"
-                        if (stud.IdMedicament != studentActualizat.IdMedicament)
+                        if (med.IdMedicament != medicamentActualizat.IdMedicament)
                         {
-                            swFisierText.WriteLine(stud.ConversieLaSir_Fisier());
+                            swFisierText.WriteLine(med.ConversieLaSir_Fisier());
                         }
                         else
                         {
-                            swFisierText.WriteLine(studentActualizat.ConversieLaSir_Fisier());
+                            swFisierText.WriteLine(medicamentActualizat.ConversieLaSir_Fisier());
                         }
                     }
                     actualizareCuSucces = true;
